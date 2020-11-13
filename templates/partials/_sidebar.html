@@ -1,75 +1,40 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
- <div class="sidebar-sticky pt-3">
-  <ul class="nav flex-column">
-   <li class="nav-item">
-    <a class="nav-link active" href="#">
-     <span data-feather="home"></span>
-     Dashboard <span class="sr-only">(current)</span>
-    </a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#">
-     <span data-feather="file"></span>
-     Orders
-    </a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#">
-     <span data-feather="shopping-cart"></span>
-     Products
-    </a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#">
-     <span data-feather="users"></span>
-     Customers
-    </a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#">
-     <span data-feather="bar-chart-2"></span>
-     Reports
-    </a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#">
-     <span data-feather="layers"></span>
-     Integrations
-    </a>
-   </li>
-  </ul>
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">Core</div>
+                <a class="nav-link" href="index.html">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Dashboard
+                </a>
+                <div class="sb-sidenav-menu-heading">Interface</div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
+                    aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Layouts
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                        <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                    </nav>
+                </div>
 
-  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-   <span>Saved reports</span>
-   <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-    <span data-feather="plus-circle"></span>
-   </a>
-  </h6>
-  <ul class="nav flex-column mb-2">
-   <li class="nav-item">
-    <a class="nav-link" href="#">
-     <span data-feather="file-text"></span>
-     Current month
-    </a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#">
-     <span data-feather="file-text"></span>
-     Last quarter
-    </a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#">
-     <span data-feather="file-text"></span>
-     Social engagement
-    </a>
-   </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#">
-     <span data-feather="file-text"></span>
-     Year-end sale
-    </a>
-   </li>
-  </ul>
- </div>
-</nav>
+                <div class="sb-sidenav-menu-heading">Addons</div>
+                <a class="nav-link" href="charts.html">
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                    Charts
+                </a>
+                <a class="nav-link" href="tables.html">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Tables
+                </a>
+            </div>
+        </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Logged in as:</div>
+            Start Bootstrap
+        </div>
+    </nav>
+</div>
