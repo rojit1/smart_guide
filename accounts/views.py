@@ -10,6 +10,7 @@ from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeEr
 from .utils import generate_token
 from django.core.mail import EmailMessage
 from django.conf import settings
+from django.contrib.auth import login, logout, authenticate
 
 User = get_user_model()
 
@@ -82,6 +83,28 @@ class LoginView(View):
     def get(self, request):
         return render(request, 'accounts/login.html')
 
+    def post(self, request):
+        context = {
+            'data': request.POST,
+            'has_error': False
+        }
+        username = request.POST['username']
+        password = request.POST['password']
+        if not username or not password:
+            messages.add_message(request, messages.ERROR,
+                                 'Both Username and password are required')
+            context['has_error'] = True
+        user = authenticate(request, username=username, password=password)
+        if not user:
+            messages.add_message(request, messages.ERROR,
+                                 'Invalid login')
+            context['has_error'] = True
+        if context['has_error']:
+            return render(request, 'accounts/login.html', status=401, context=context)
+
+        login(request, user)
+        return redirect('dashboard:index')
+
 
 class ActivateAccountView(View):
     def get(self, request, uidb64, token):
@@ -96,3 +119,9 @@ class ActivateAccountView(View):
             return redirect('accounts-login')
 
         return render(request, 'accounts/failed.html', status=401)
+
+
+class logoutView(View):
+    def post(self, request):
+        logout(request)
+        return redirect('accounts-login')

@@ -16,8 +16,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card mt-5">
-                    <img src="https://mta-instagram-clone.herokuapp.com/static/img/instagram-wordmark.svg"
-                        class="card-img-top" alt="...">
+                    <img src="{% static 'img/sg.png' %}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-muted">Login</h5>
                         <a href="#" class="btn btn-sm btn-block btn-primary"><i class="fa fa-facebook"></i> Login with
@@ -44,12 +43,9 @@
                         {% endif %}
 
 
-                        <form action="{% url 'accounts-register' %}" method="POST">
+                        <form action="{% url 'accounts-login' %}" method="POST">
                             {% csrf_token %}
-                            <div class="form-group">
-                                <input class="form-control form-control-sm" type="email" name="email"
-                                    value="{{data.email}}" placeholder="Email">
-                            </div>
+
                             <div class="form-group">
                                 <input class="form-control form-control-sm" type="text" name="username"
                                     value="{{data.username}}" placeholder="Username">
@@ -58,7 +54,7 @@
                                 <input class="form-control form-control-sm" type="password" name="password"
                                     placeholder="Password">
                             </div>
-                            <input type="submit" class="btn btn-sm btn-success btn-block" Value="Register">
+                            <input type="submit" class="btn btn-sm btn-success btn-block" Value="Login">
                         </form>
 
 
