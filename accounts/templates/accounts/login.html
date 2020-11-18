@@ -1,5 +1,6 @@
 {% extends 'accounts/base.html'%}
 {% load static %}
+{% load socialaccount %}
 
 
 
@@ -19,8 +20,10 @@
                     <img src="{% static 'img/sg.png' %}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-muted">Login</h5>
-                        <a href="#" class="btn btn-sm btn-block btn-primary"><i class="fa fa-facebook"></i> Login with
-                            Facebook</a>
+
+                        <a style="background-color: rgb(189, 204, 197);" href="{% provider_login_url 'google' %}"
+                            class="btn btn-sm btn-block"><i class="fa fa-google"></i> Login with
+                            Google</a>
 
                         <div class="row">
                             <div class="col-md-5">
@@ -54,7 +57,7 @@
                                 <input class="form-control form-control-sm" type="password" name="password"
                                     placeholder="Password">
                             </div>
-                            <input type="submit" class="btn btn-sm btn-success btn-block" Value="Login">
+                            <input type="submit" class="btn btn-sm btn-primary btn-block" Value="Login">
                         </form>
 
 
